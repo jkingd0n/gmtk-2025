@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bdcg2u1nakbkx"]
+
+[node name="electricity_gauge" type="Node2D"]
+
+[node name="text" type="TextEdit" parent="."]
+offset_left = -97.0
+offset_top = -50.0
+offset_right = 99.0
+offset_bottom = 54.0
+text = "0"
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
