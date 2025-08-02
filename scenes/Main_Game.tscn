@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://7asfedg7unoy"]
+[gd_scene load_steps=4 format=3 uid="uid://7asfedg7unoy"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_vy804"]
+[ext_resource type="PackedScene" uid="uid://0nfb70330opl" path="res://prefabs/hammy_and_wheel.tscn" id="2_fcw3y"]
+[ext_resource type="Script" uid="uid://cbd8yip2hctwm" path="res://scripts/hammy_and_wheel.gd" id="3_nbsk6"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vy804")
@@ -8,10 +10,10 @@ timeout = 1.0
 decelCoefficient = 0.01
 
 [node name="text" type="TextEdit" parent="."]
-offset_left = -176.0
-offset_top = -109.0
-offset_right = 174.0
-offset_bottom = 8.0
+offset_left = -49.0
+offset_top = -124.0
+offset_right = 50.0
+offset_bottom = -60.0
 text = "test"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -19,4 +21,12 @@ text = "test"
 [node name="speedTimeout" type="Timer" parent="."]
 one_shot = true
 
+[node name="hammy_and_wheel" parent="." instance=ExtResource("2_fcw3y")]
+script = ExtResource("3_nbsk6")
+current_speed = 1.0
+
 [connection signal="timeout" from="speedTimeout" to="." method="_on_speed_timeout_timeout"]
+
+[editable path="hammy_and_wheel"]
+[editable path="hammy_and_wheel/wheel"]
+[editable path="hammy_and_wheel/hammy_run"]

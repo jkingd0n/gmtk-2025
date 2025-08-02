@@ -42,7 +42,7 @@ _data = {
 &"spin": SubResource("Animation_j3485")
 }
 
-[node name="Wheel" type="Sprite2D"]
+[node name="wheel" type="Sprite2D"]
 texture_filter = 1
 texture = ExtResource("1_1wm4p")
 hframes = 3
@@ -54,7 +54,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_vn6tv")
 }
 
-[node name="Wheelstand" type="Sprite2D" parent="."]
+[node name="wheelstand" type="Sprite2D" parent="."]
 texture = ExtResource("2_5ahx1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
