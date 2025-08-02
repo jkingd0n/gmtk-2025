@@ -2,7 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://cpv7fif6aluhl" path="res://spritesheets/wheel.png" id="1_1wm4p"]
 [ext_resource type="Texture2D" uid="uid://br2yy6j1m3cfo" path="res://spritesheets/wheelstand.png" id="2_5ahx1"]
-[ext_resource type="Script" uid="uid://stquaxh23kwi" path="res://scripts/wheel.gd" id="2_j3485"]
+[ext_resource type="Script" path="res://scripts/wheel.gd" id="2_j3485"]
+
+[sub_resource type="Animation" id="Animation_8pfyc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_j3485"]
 resource_name = "spin"
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_8pfyc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vn6tv"]
@@ -56,5 +56,3 @@ libraries = {
 
 [node name="wheelstand" type="Sprite2D" parent="."]
 texture = ExtResource("2_5ahx1")
-
-[node name="Camera2D" type="Camera2D" parent="."]
