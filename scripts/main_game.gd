@@ -24,7 +24,8 @@ func _process(delta):
 func _decelerate(delta):
 	var acc = speed * speed * decelCoefficient
 	speed = speed - (acc * delta)
-	animation_speed = animation_coefficient * speed
+	animation_speed = animation_coefficient * speed 
+	print(animation_speed)
 	$hammy_and_wheel.update_speed(animation_speed)
 	
 func _on_speed_timeout_timeout():

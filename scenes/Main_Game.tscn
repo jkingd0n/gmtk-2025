@@ -36,7 +36,3 @@ script = ExtResource("3_nbsk6")
 current_speed = 1.0
 
 [connection signal="timeout" from="speedTimeout" to="." method="_on_speed_timeout_timeout"]
-
-[editable path="hammy_and_wheel"]
-[editable path="hammy_and_wheel/wheel"]
-[editable path="hammy_and_wheel/hammy_run"]
