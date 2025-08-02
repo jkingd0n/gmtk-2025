@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0nfb70330opl"]
+[gd_scene load_steps=5 format=3 uid="uid://0nfb70330opl"]
 
 [ext_resource type="Script" uid="uid://bmtu0bvnq7os7" path="res://scripts/hammy_and_wheel_tester.gd" id="1_11mpi"]
 [ext_resource type="PackedScene" uid="uid://t8yajmow3w0" path="res://prefabs/wheel.tscn" id="1_thvs5"]
+[ext_resource type="PackedScene" uid="uid://dre8w4ohje828" path="res://prefabs/smoke_n_dust_p_03_vfx_1.tscn" id="4_2fjm3"]
 [ext_resource type="PackedScene" uid="uid://dpo72b1e0ta43" path="res://prefabs/hammy_run.tscn" id="4_83l5y"]
 
 [node name="hammy_and_wheel" type="Node2D"]
@@ -12,5 +13,12 @@ script = ExtResource("1_11mpi")
 [node name="hammy_run" parent="." instance=ExtResource("4_83l5y")]
 position = Vector2(0, 22)
 
+[node name="SmokeNDustP03Vfx1" parent="." instance=ExtResource("4_2fjm3")]
+position = Vector2(-69, 21)
+scale = Vector2(1.48438, 1.48438)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [editable path="wheel"]
 [editable path="hammy_run"]
+[editable path="SmokeNDustP03Vfx1"]
