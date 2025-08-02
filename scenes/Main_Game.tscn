@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://7asfedg7unoy"]
+
+[ext_resource type="Script" path="res://scenes/main_game.gd" id="1_vy804"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vy804")
+
+[node name="text" type="TextEdit" parent="."]
+offset_left = -176.0
+offset_top = -109.0
+offset_right = 174.0
+offset_bottom = 8.0
+text = "test"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="speedTimeout" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="speedTimeout" to="." method="_on_speed_timeout_timeout"]
