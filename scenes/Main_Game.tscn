@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7asfedg7unoy"]
+[gd_scene load_steps=12 format=3 uid="uid://7asfedg7unoy"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_vy804"]
 [ext_resource type="Texture2D" uid="uid://b804i8svwfuvi" path="res://spritesheets/wall.png" id="2_3v32i"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://boojiuw2ovcwl" path="res://scripts/electricity_gauge.gd" id="6_7h5k3"]
 [ext_resource type="AudioStream" uid="uid://e0ejokr056ob" path="res://sounds/bgm.ogg" id="9_qmn38"]
 [ext_resource type="PackedScene" uid="uid://pbkeqj058x0t" path="res://prefabs/fan.tscn" id="10_24eh4"]
+[ext_resource type="PackedScene" uid="uid://wp1pyvhixgbx" path="res://prefabs/lamp.tscn" id="11_dkv1d"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vy804")
@@ -31,8 +32,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 700, 500)
 
 [node name="tv" parent="." instance=ExtResource("2_lqrf8")]
-position = Vector2(189, -81)
-scale = Vector2(4, 4)
+position = Vector2(-93.54, -109.395)
+scale = Vector2(8, 8)
 
 [node name="cage" parent="." instance=ExtResource("4_3v32i")]
 
@@ -83,6 +84,14 @@ scale = Vector2(4, 4)
 [node name="game_reset" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="Lamp" parent="." instance=ExtResource("11_dkv1d")]
+z_index = 6
+position = Vector2(323.055, -99.53)
+scale = Vector2(6, 6)
+
+[node name="Timer" parent="Lamp" index="2"]
+wait_time = 10.0
+
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
 [connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]
 [connection signal="game_over" from="electricity_gauge" to="tv" method="_on_game_over"]
@@ -93,3 +102,4 @@ wait_time = 5.0
 [editable path="hammy_and_wheel/hammy_run"]
 [editable path="hammy_and_wheel/SmokeNDustP03Vfx1"]
 [editable path="electricity_gauge"]
+[editable path="Lamp"]

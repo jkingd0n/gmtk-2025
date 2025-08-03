@@ -41,6 +41,7 @@ func _on_electricity_gauge_electricity_update() -> void:
 func _on_game_over() -> void:
 	game_over = true
 	$Fan._turn_off()
+	$Lamp._turn_off()
 	$total_energy.text = $total_energy.text + '\n' + "Game Over!" 
 	$game_reset.start()
 	
