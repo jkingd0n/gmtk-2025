@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbvhb7wafnfmn"]
+[gd_scene load_steps=11 format=3 uid="uid://bbvhb7wafnfmn"]
 
 [ext_resource type="Texture2D" uid="uid://dkbxn512fppvm" path="res://spritesheets/tv_screen.png" id="1_8fhak"]
 [ext_resource type="Script" uid="uid://csfdu22rmy8pl" path="res://scripts/television.gd" id="1_kxwe8"]
 [ext_resource type="Texture2D" uid="uid://c7qyss4pltpcu" path="res://spritesheets/Television.png" id="2_kxwe8"]
+[ext_resource type="AudioStream" uid="uid://b46x2d2k6641l" path="res://sounds/tv-on.ogg" id="4_inq5q"]
+[ext_resource type="AudioStream" uid="uid://bmumdts1o2k51" path="res://sounds/tv-off.ogg" id="5_jb1ms"]
 
 [sub_resource type="Animation" id="Animation_4snkq"]
 length = 0.001
@@ -16,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_kxwe8"]
@@ -86,6 +88,7 @@ position = Vector2(-4, 6)
 texture = ExtResource("1_8fhak")
 hframes = 2
 vframes = 5
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Noise"]
 libraries = {
@@ -96,4 +99,16 @@ libraries = {
 texture_filter = 1
 texture = ExtResource("2_kxwe8")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="tv-on" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_inq5q")
+
+[node name="tv-off" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jb1ms")
+
 [connection signal="animation_finished" from="Noise/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

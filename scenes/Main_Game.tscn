@@ -73,6 +73,7 @@ parameters/looping = true
 
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
 [connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]
+[connection signal="game_over" from="electricity_gauge" to="tv" method="_on_game_over"]
 
 [editable path="hammy_and_wheel"]
 [editable path="hammy_and_wheel/wheel"]
