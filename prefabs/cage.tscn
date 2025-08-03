@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqdx7r7iw05al"]
+
+[ext_resource type="Texture2D" uid="uid://bltjqsaqunl78" path="res://spritesheets/cage-z0.png" id="1_ukx00"]
+[ext_resource type="Texture2D" uid="uid://bhkvmr2kjwugy" path="res://spritesheets/cage-z1.png" id="2_w7esi"]
+
+[node name="cage" type="Node2D"]
+
+[node name="z0" type="Sprite2D" parent="."]
+position = Vector2(0, 75)
+texture = ExtResource("1_ukx00")
+
+[node name="z1" type="Sprite2D" parent="."]
+z_index = 3
+texture = ExtResource("2_w7esi")

@@ -21,6 +21,7 @@ func update_electricity(speed: float):
 	if speed > 50:
 		remaining = min(remaining+1, 100)
 		total_electricity_generated += 1
+		$AudioStreamPlayer2D.play()
 	else:
 		remaining = max(remaining-1, 0)
 	$electricity.value = remaining
