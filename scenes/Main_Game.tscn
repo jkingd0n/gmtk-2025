@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://7asfedg7unoy"]
+[gd_scene load_steps=7 format=3 uid="uid://7asfedg7unoy"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_vy804"]
 [ext_resource type="PackedScene" uid="uid://0nfb70330opl" path="res://prefabs/hammy_and_wheel.tscn" id="2_fcw3y"]
 [ext_resource type="Texture2D" uid="uid://dlx437o37esor" path="res://spritesheets/ground.png" id="2_x1cdc"]
 [ext_resource type="Script" uid="uid://cbd8yip2hctwm" path="res://scripts/hammy_and_wheel.gd" id="3_nbsk6"]
+[ext_resource type="PackedScene" uid="uid://cdgvlthkdjrpc" path="res://prefabs/electricity_gauge.tscn" id="5_kvlix"]
+[ext_resource type="Script" uid="uid://boojiuw2ovcwl" path="res://scripts/electricity_gauge.gd" id="6_7h5k3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vy804")
@@ -12,13 +14,14 @@ timeout = 1.0
 decelCoefficient = 0.01
 
 [node name="text" type="TextEdit" parent="."]
-offset_left = -49.0
-offset_top = -124.0
-offset_right = 50.0
-offset_bottom = -60.0
+offset_left = -284.0
+offset_top = 187.0
+offset_right = -185.0
+offset_bottom = 251.0
 text = "test"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="speedTimeout" type="Timer" parent="."]
 one_shot = true
@@ -35,4 +38,22 @@ region_rect = Rect2(0, 0, 500, 128)
 script = ExtResource("3_nbsk6")
 current_speed = 1.0
 
+[node name="electricity_gauge" parent="." instance=ExtResource("5_kvlix")]
+position = Vector2(-102, -121)
+script = ExtResource("6_7h5k3")
+
+[node name="electricity" parent="electricity_gauge" index="0"]
+offset_left = 154.0
+offset_top = 45.0
+offset_right = 186.0
+offset_bottom = 109.0
+
 [connection signal="timeout" from="speedTimeout" to="." method="_on_speed_timeout_timeout"]
+[connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
+[connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]
+
+[editable path="hammy_and_wheel"]
+[editable path="hammy_and_wheel/wheel"]
+[editable path="hammy_and_wheel/hammy_run"]
+[editable path="hammy_and_wheel/SmokeNDustP03Vfx1"]
+[editable path="electricity_gauge"]

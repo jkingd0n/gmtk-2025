@@ -1,5 +1,6 @@
 extends Node2D
 
+@export_range(0, 100) var speed : float = 0
 @export_range(0, 100) var remaining : int = 50
 signal electricity_update
 signal game_over
@@ -22,3 +23,6 @@ func update_electricity(speed: float):
 		remaining = max(remaining-1, 0)
 	$electricity.value = remaining
 	$electricity_timer.start()
+
+func _process(delta: float):
+	update_electricity(speed)

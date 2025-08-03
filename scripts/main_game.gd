@@ -25,9 +25,15 @@ func _decelerate(delta):
 	var acc = speed * speed * decelCoefficient
 	speed = speed - (acc * delta)
 	animation_speed = animation_coefficient * speed 
-	print(animation_speed)
+	decelCoefficient += (delta * .001)
 	$hammy_and_wheel.update_speed(animation_speed)
 	
 func _on_speed_timeout_timeout():
 	stopped = true
 	print("timedout")
+
+func _on_electricity_gauge_electricity_update() -> void:
+	$electricity_gauge.update_electricity(speed)
+
+func _on_game_over() -> void:
+	print("Game Over!")

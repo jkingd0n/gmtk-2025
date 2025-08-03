@@ -1,22 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpo72b1e0ta43"]
 
 [ext_resource type="Texture2D" uid="uid://b051rnqa36k3r" path="res://spritesheets/run.png" id="1_0buu3"]
-[ext_resource type="Script" path="res://scripts/hammy_run.gd" id="2_6qflj"]
-
-[sub_resource type="Animation" id="Animation_nxint"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[ext_resource type="Script" uid="uid://l7l2kqw3vrja" path="res://scripts/hammy_run.gd" id="2_6qflj"]
 
 [sub_resource type="Animation" id="Animation_nxint"]
 length = 0.001
