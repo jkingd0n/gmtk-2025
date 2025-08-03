@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7asfedg7unoy"]
+[gd_scene load_steps=13 format=3 uid="uid://7asfedg7unoy"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_vy804"]
 [ext_resource type="Texture2D" uid="uid://b804i8svwfuvi" path="res://spritesheets/wall.png" id="2_3v32i"]
@@ -10,7 +10,8 @@
 [ext_resource type="Script" uid="uid://boojiuw2ovcwl" path="res://scripts/electricity_gauge.gd" id="6_7h5k3"]
 [ext_resource type="AudioStream" uid="uid://e0ejokr056ob" path="res://sounds/bgm.ogg" id="9_qmn38"]
 [ext_resource type="PackedScene" uid="uid://pbkeqj058x0t" path="res://prefabs/fan.tscn" id="10_24eh4"]
-[ext_resource type="PackedScene" uid="uid://wp1pyvhixgbx" path="res://prefabs/lamp.tscn" id="11_dkv1d"]
+[ext_resource type="PackedScene" uid="uid://5gxut1umuvr2" path="res://prefabs/lamp.tscn" id="11_dkv1d"]
+[ext_resource type="AudioStream" uid="uid://bojwquo82ykkh" path="res://sounds/game-over.ogg" id="12_c56jd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vy804")
@@ -91,6 +92,10 @@ scale = Vector2(6, 6)
 
 [node name="Timer" parent="Lamp" index="2"]
 wait_time = 10.0
+
+[node name="game-over" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_c56jd")
+volume_db = 10.0
 
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
 [connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]

@@ -42,6 +42,7 @@ func _on_game_over() -> void:
 	game_over = true
 	$Fan._turn_off()
 	$Lamp._turn_off()
+	$"game-over".play()
 	$total_energy.text = $total_energy.text + '\n' + "Game Over!" 
 	$game_reset.start()
 	

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://wp1pyvhixgbx"]
+[gd_scene load_steps=6 format=3 uid="uid://5gxut1umuvr2"]
 
 [ext_resource type="Texture2D" uid="uid://dhflxtxbjdxxs" path="res://spritesheets/lamp-light.png" id="1_pmlmq"]
 [ext_resource type="Script" uid="uid://cb4nksvskxt1h" path="res://scripts/lamp.gd" id="1_xojxl"]
 [ext_resource type="Texture2D" uid="uid://ljk6ylo36w35" path="res://spritesheets/lamp.png" id="2_xojxl"]
+[ext_resource type="AudioStream" uid="uid://d4hw3emdige3" path="res://sounds/lamp-on.ogg" id="4_odgxo"]
+[ext_resource type="AudioStream" uid="uid://dpitr1e0uic4e" path="res://sounds/lamp-off.ogg" id="5_k4e7c"]
 
 [node name="Lamp" type="Node2D"]
 script = ExtResource("1_xojxl")
@@ -21,5 +23,13 @@ texture = ExtResource("2_xojxl")
 wait_time = 2.5
 one_shot = true
 autostart = true
+
+[node name="on" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_odgxo")
+volume_db = 10.0
+
+[node name="off" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_k4e7c")
+volume_db = 10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
