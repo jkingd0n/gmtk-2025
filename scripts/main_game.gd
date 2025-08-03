@@ -42,3 +42,7 @@ func _on_game_over() -> void:
 	game_over = true
 	$Fan._turn_off()
 	$total_energy.text = $total_energy.text + '\n' + "Game Over!" 
+	$game_reset.start()
+	
+func _on_game_reset_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

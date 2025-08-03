@@ -80,9 +80,13 @@ parameters/looping = true
 position = Vector2(-365, -57)
 scale = Vector2(4, 4)
 
+[node name="game_reset" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
 [connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]
 [connection signal="game_over" from="electricity_gauge" to="tv" method="_on_game_over"]
+[connection signal="timeout" from="game_reset" to="." method="_on_game_reset_timeout"]
 
 [editable path="hammy_and_wheel"]
 [editable path="hammy_and_wheel/wheel"]
