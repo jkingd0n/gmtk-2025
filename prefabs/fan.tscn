@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://pbkeqj058x0t"]
+[gd_scene load_steps=9 format=3 uid="uid://pbkeqj058x0t"]
 
 [ext_resource type="Texture2D" uid="uid://bn341wup0rreq" path="res://spritesheets/fan-sprite-sheet.png" id="1_64rwm"]
-[ext_resource type="Script" uid="uid://bidce2aropud1" path="res://prefabs/fan.gd" id="1_o40uj"]
+[ext_resource type="Script" uid="uid://bidce2aropud1" path="res://scripts/fan.gd" id="1_h0yah"]
+[ext_resource type="AudioStream" uid="uid://dfp1wr1ttm1dr" path="res://sounds/fan-on.ogg" id="3_qqerp"]
+[ext_resource type="AudioStream" uid="uid://dvxgh7defd6vu" path="res://sounds/fan-off.ogg" id="4_2x45w"]
 
 [sub_resource type="Animation" id="Animation_h0yah"]
 length = 0.001
@@ -59,7 +61,7 @@ _data = {
 }
 
 [node name="Fan" type="Node2D"]
-script = ExtResource("1_o40uj")
+script = ExtResource("1_h0yah")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -77,5 +79,14 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="on" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qqerp")
+volume_db = 5.0
+parameters/looping = true
+
+[node name="off" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2x45w")
+volume_db = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
