@@ -11,3 +11,7 @@ func update_speed(new_speed) -> void:
 		$SmokeNDustP03Vfx1.visible = false
 	$wheel/wheel/AnimationPlayer.speed_scale = new_speed
 	$hammy_run/AnimationPlayer.speed_scale = new_speed
+	if new_speed > 0:
+		if not $wheel/wheel/AudioStreamPlayer2D.playing:
+			$wheel/wheel/AudioStreamPlayer2D.play()
+		$wheel/wheel/AudioStreamPlayer2D.pitch_scale = new_speed

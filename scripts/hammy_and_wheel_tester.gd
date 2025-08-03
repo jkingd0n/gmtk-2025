@@ -5,7 +5,7 @@ var dust_threshold = 2.0
 
 
 func update_speed(new_speed) -> void:
-	$wheel/AnimationPlayer.speed_scale = new_speed
+	$wheel/wheel/AnimationPlayer.speed_scale = new_speed
 	$hammy_run/AnimationPlayer.speed_scale = new_speed
 	if new_speed > dust_threshold:
 		$SmokeNDustP03Vfx1.visible = true

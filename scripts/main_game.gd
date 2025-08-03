@@ -13,18 +13,18 @@ var sweat_threshold : float = .15
 
 func _input(event):
 	if event.is_action_pressed("accel"):
-		var delta_pressed = Time.get_unix_time_from_system() - timestamp_last_pressed
 		timestamp_last_pressed = Time.get_unix_time_from_system()
-		if delta_pressed > sweat_threshold:
-			$hammy_and_wheel/hammy_run.normal()
-		else:
-			$hammy_and_wheel/hammy_run.fast()
 		speed += acceleration + (speed * accConstant)
 		animation_speed = animation_coefficient * speed
 		$hammy_and_wheel.update_speed(animation_speed)
 		
 func _process(delta):
 	_decelerate(delta)
+	var delta_pressed = Time.get_unix_time_from_system() - timestamp_last_pressed
+	if delta_pressed > sweat_threshold:
+		$hammy_and_wheel/hammy_run.normal()
+	else:
+		$hammy_and_wheel/hammy_run.fast()
 	if not game_over:
 		$total_energy.text = "kilowatts: " + str($electricity_gauge.total_electricity_generated)
 	
