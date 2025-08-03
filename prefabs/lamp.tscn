@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhflxtxbjdxxs" path="res://spritesheets/lamp-light.png" id="1_pmlmq"]
 [ext_resource type="Script" uid="uid://cb4nksvskxt1h" path="res://scripts/lamp.gd" id="1_xojxl"]
-[ext_resource type="Texture2D" uid="uid://ljk6ylo36w35" path="res://spritesheets/lamp.png" id="2_xojxl"]
+[ext_resource type="Texture2D" uid="uid://3po7mcui8aeu" path="res://spritesheets/lamp_sprite_sheet.png" id="3_xojxl"]
 
 [node name="Lamp" type="Node2D"]
 script = ExtResource("1_xojxl")
@@ -15,7 +15,8 @@ texture = ExtResource("1_pmlmq")
 
 [node name="lamp" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_xojxl")
+texture = ExtResource("3_xojxl")
+hframes = 2
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
