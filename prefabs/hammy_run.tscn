@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpo72b1e0ta43"]
+[gd_scene load_steps=7 format=3 uid="uid://dpo72b1e0ta43"]
 
-[ext_resource type="Texture2D" uid="uid://b051rnqa36k3r" path="res://spritesheets/run.png" id="1_0buu3"]
+[ext_resource type="Texture2D" uid="uid://bdmgjvqyekvmi" path="res://spritesheets/running-sprites.png" id="1_6qflj"]
 [ext_resource type="Script" uid="uid://l7l2kqw3vrja" path="res://scripts/hammy_run.gd" id="2_6qflj"]
 
 [sub_resource type="Animation" id="Animation_nxint"]
@@ -12,15 +12,14 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_6qflj"]
 resource_name = "run"
-length = 0.3
 loop_mode = 1
 step = 0.01
 tracks/0/type = "value"
@@ -30,21 +29,38 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_ki1tk"]
+resource_name = "fast"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ki1tk"]
 _data = {
 &"RESET": SubResource("Animation_nxint"),
+&"fast": SubResource("Animation_ki1tk"),
 &"run": SubResource("Animation_6qflj")
 }
 
 [node name="hammy_run" type="Sprite2D"]
 texture_filter = 1
-texture = ExtResource("1_0buu3")
+texture = ExtResource("1_6qflj")
+hframes = 2
 vframes = 2
 script = ExtResource("2_6qflj")
 
@@ -52,3 +68,5 @@ script = ExtResource("2_6qflj")
 libraries = {
 &"": SubResource("AnimationLibrary_ki1tk")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]

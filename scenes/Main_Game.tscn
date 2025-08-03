@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://7asfedg7unoy"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_vy804"]
+[ext_resource type="Texture2D" uid="uid://c2twwqcc2gdte" path="res://spritesheets/cage.png" id="2_7h5k3"]
 [ext_resource type="PackedScene" uid="uid://0nfb70330opl" path="res://prefabs/hammy_and_wheel.tscn" id="2_fcw3y"]
-[ext_resource type="Texture2D" uid="uid://dlx437o37esor" path="res://spritesheets/ground.png" id="2_x1cdc"]
 [ext_resource type="Script" uid="uid://cbd8yip2hctwm" path="res://scripts/hammy_and_wheel.gd" id="3_nbsk6"]
 [ext_resource type="PackedScene" uid="uid://cdgvlthkdjrpc" path="res://prefabs/electricity_gauge.tscn" id="5_kvlix"]
 [ext_resource type="Script" uid="uid://boojiuw2ovcwl" path="res://scripts/electricity_gauge.gd" id="6_7h5k3"]
@@ -26,13 +26,12 @@ zoom = Vector2(2, 2)
 [node name="speedTimeout" type="Timer" parent="."]
 one_shot = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="cage" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(0, 34)
-texture = ExtResource("2_x1cdc")
+texture = ExtResource("2_7h5k3")
 region_enabled = true
-region_rect = Rect2(0, 0, 500, 128)
+region_rect = Rect2(0, 0, 512, 256)
 
 [node name="hammy_and_wheel" parent="." instance=ExtResource("2_fcw3y")]
 script = ExtResource("3_nbsk6")
@@ -43,10 +42,10 @@ position = Vector2(-102, -121)
 script = ExtResource("6_7h5k3")
 
 [node name="electricity" parent="electricity_gauge" index="0"]
-offset_left = 154.0
-offset_top = 45.0
-offset_right = 186.0
-offset_bottom = 109.0
+offset_left = 145.0
+offset_top = 52.0
+offset_right = 177.0
+offset_bottom = 116.0
 
 [connection signal="timeout" from="speedTimeout" to="." method="_on_speed_timeout_timeout"]
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
