@@ -26,7 +26,7 @@ texture_filter = 1
 texture_repeat = 2
 texture = ExtResource("2_7h5k3")
 region_enabled = true
-region_rect = Rect2(0, 0, 512, 256)
+region_rect = Rect2(0, 0, 600, 350)
 
 [node name="hammy_and_wheel" parent="." instance=ExtResource("2_fcw3y")]
 script = ExtResource("3_nbsk6")
@@ -54,7 +54,6 @@ text = "kW: "
 
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
 [connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]
-[connection signal="game_over" from="electricity_gauge" to="tv" method="_on_game_over"]
 
 [editable path="hammy_and_wheel"]
 [editable path="hammy_and_wheel/wheel"]

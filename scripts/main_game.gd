@@ -9,7 +9,7 @@ var animation_speed = 0
 @export var decelCoefficient = .1
 var game_over : bool = false
 var timestamp_last_pressed : float = 0
-var sweat_threshold = .15
+var sweat_threshold : float = .15
 
 func _input(event):
 	if event.is_action_pressed("accel"):

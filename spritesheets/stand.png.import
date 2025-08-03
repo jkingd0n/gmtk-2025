@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br2yy6j1m3cfo"
-path="res://.godot/imported/wheelstand.png-59d8d226039bfde83e048b5375066cc4.ctex"
+uid="uid://dsm84dsf3k52q"
+path="res://.godot/imported/stand.png-c8d6be2221b42a18eac7b3179fa7971b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spritesheets/wheelstand.png"
-dest_files=["res://.godot/imported/wheelstand.png-59d8d226039bfde83e048b5375066cc4.ctex"]
+source_file="res://spritesheets/stand.png"
+dest_files=["res://.godot/imported/stand.png-c8d6be2221b42a18eac7b3179fa7971b.ctex"]
 
 [params]
 
