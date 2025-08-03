@@ -13,18 +13,8 @@ acceleration = 10
 timeout = 1.0
 decelCoefficient = 0.01
 
-[node name="text" type="TextEdit" parent="."]
-offset_left = -284.0
-offset_top = 187.0
-offset_right = -185.0
-offset_bottom = 251.0
-text = "test"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-
-[node name="speedTimeout" type="Timer" parent="."]
-one_shot = true
 
 [node name="cage" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -47,7 +37,16 @@ offset_top = 52.0
 offset_right = 177.0
 offset_bottom = 116.0
 
-[connection signal="timeout" from="speedTimeout" to="." method="_on_speed_timeout_timeout"]
+[node name="total_energy" type="TextEdit" parent="."]
+offset_left = 91.0
+offset_top = 84.0
+offset_right = 139.0
+offset_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 7
+text = "kW: "
+
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
 [connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]
 
