@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://7asfedg7unoy"]
+[gd_scene load_steps=9 format=3 uid="uid://7asfedg7unoy"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_vy804"]
+[ext_resource type="Texture2D" uid="uid://b804i8svwfuvi" path="res://spritesheets/wall.png" id="2_3v32i"]
 [ext_resource type="Texture2D" uid="uid://c2twwqcc2gdte" path="res://spritesheets/cage.png" id="2_7h5k3"]
 [ext_resource type="PackedScene" uid="uid://0nfb70330opl" path="res://prefabs/hammy_and_wheel.tscn" id="2_fcw3y"]
 [ext_resource type="PackedScene" uid="uid://bbvhb7wafnfmn" path="res://prefabs/television.tscn" id="2_lqrf8"]
@@ -17,9 +18,19 @@ decelCoefficient = 0.01
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
+[node name="Wall" type="Sprite2D" parent="."]
+z_index = -10
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -40)
+scale = Vector2(2, 2)
+texture = ExtResource("2_3v32i")
+region_enabled = true
+region_rect = Rect2(0, 0, 700, 500)
+
 [node name="tv" parent="." instance=ExtResource("2_lqrf8")]
-position = Vector2(148, -108)
-scale = Vector2(3, 3)
+position = Vector2(145.055, -63.19)
+scale = Vector2(4, 4)
 
 [node name="cage" type="Sprite2D" parent="."]
 texture_filter = 1
