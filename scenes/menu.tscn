@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c87xetaib5oje"]
+[gd_scene load_steps=6 format=3 uid="uid://c87xetaib5oje"]
 
 [ext_resource type="Script" uid="uid://b5vcyuysjqrf3" path="res://scripts/menu.gd" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://b804i8svwfuvi" path="res://spritesheets/wall.png" id="2_4ytvr"]
 [ext_resource type="PackedScene" uid="uid://0nfb70330opl" path="res://prefabs/hammy_and_wheel.tscn" id="3_g3eks"]
+[ext_resource type="Script" uid="uid://cbd8yip2hctwm" path="res://scripts/hammy_and_wheel.gd" id="4_4ytvr"]
 [ext_resource type="AudioStream" uid="uid://c6skm1obiddgt" path="res://sounds/menu.ogg" id="4_v86rl"]
 
 [node name="Menu" type="Node2D"]
@@ -11,36 +12,43 @@ script = ExtResource("1_mhnvy")
 [node name="Wall" type="Sprite2D" parent="."]
 texture_repeat = 2
 position = Vector2(-1, 0.624992)
-scale = Vector2(2.52423, 3.12561)
+scale = Vector2(5, 5)
 texture = ExtResource("2_4ytvr")
 region_enabled = true
 region_rect = Rect2(0, 0, 512, 200)
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="TextEdit" type="RichTextLabel" parent="."]
 offset_left = -148.0
 offset_top = -224.0
 offset_right = 148.0
 offset_bottom = -137.0
-theme_override_font_sizes/font_size = 50
+theme_override_colors/default_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/normal_font_size = 50
 text = "Power Loop"
 
-[node name="Button" type="Button" parent="."]
-offset_left = -78.0
-offset_top = 33.0
-offset_right = 79.0
-offset_bottom = 76.0
+[node name="Button" type="RichTextLabel" parent="."]
+z_index = 4
+offset_left = -71.0
+offset_top = 208.0
+offset_right = 91.0
+offset_bottom = 254.0
+theme_override_font_sizes/normal_font_size = 28
 text = "Start Game"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="hammy_and_wheel" parent="." instance=ExtResource("3_g3eks")]
-position = Vector2(-88, -79)
+position = Vector2(-348, -11)
+scale = Vector2(4, 4)
+script = ExtResource("4_4ytvr")
+current_speed = 1.0
 
-[node name="TextEdit2" type="TextEdit" parent="."]
-offset_left = -20.0
-offset_top = -87.0
-offset_right = 295.0
-offset_bottom = -51.0
+[node name="TextEdit2" type="RichTextLabel" parent="."]
+offset_left = -165.0
+offset_top = -91.0
+offset_right = 150.0
+offset_bottom = -55.0
+theme_override_colors/default_color = Color(0, 0, 1, 1)
 text = "Make Hammy run by mashing spacebar"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -48,4 +56,10 @@ stream = ExtResource("4_v86rl")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -167.0
+offset_top = 195.0
+offset_right = 162.0
+offset_bottom = 257.0
+max_value = 20.0
+show_percentage = false

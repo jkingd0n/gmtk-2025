@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://pbkeqj058x0t"]
 
 [ext_resource type="Texture2D" uid="uid://bn341wup0rreq" path="res://spritesheets/fan-sprite-sheet.png" id="1_64rwm"]
-[ext_resource type="Script" uid="uid://bidce2aropud1" path="res://scripts/fan.gd" id="1_h0yah"]
+[ext_resource type="Script" path="res://scripts/fan.gd" id="1_h0yah"]
 [ext_resource type="AudioStream" uid="uid://dfp1wr1ttm1dr" path="res://sounds/fan-on.ogg" id="3_qqerp"]
 [ext_resource type="AudioStream" uid="uid://dvxgh7defd6vu" path="res://sounds/fan-off.ogg" id="4_2x45w"]
 
