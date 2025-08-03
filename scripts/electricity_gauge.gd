@@ -4,6 +4,7 @@ extends Node2D
 signal electricity_update
 signal game_over
 var is_game_over : bool = false
+var total_electricity_generated = 0
 
 func _ready():
 	$electricity_timer.start()
@@ -19,6 +20,7 @@ func update_electricity(speed: float):
 		is_game_over = true
 	if speed > 50:
 		remaining = min(remaining+1, 100)
+		total_electricity_generated += 1
 	else:
 		remaining = max(remaining-1, 0)
 	$electricity.value = remaining

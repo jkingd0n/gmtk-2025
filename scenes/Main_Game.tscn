@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://7asfedg7unoy"]
+[gd_scene load_steps=8 format=3 uid="uid://7asfedg7unoy"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_vy804"]
 [ext_resource type="Texture2D" uid="uid://c2twwqcc2gdte" path="res://spritesheets/cage.png" id="2_7h5k3"]
 [ext_resource type="PackedScene" uid="uid://0nfb70330opl" path="res://prefabs/hammy_and_wheel.tscn" id="2_fcw3y"]
+[ext_resource type="PackedScene" path="res://prefabs/television.tscn" id="2_lqrf8"]
 [ext_resource type="Script" uid="uid://cbd8yip2hctwm" path="res://scripts/hammy_and_wheel.gd" id="3_nbsk6"]
 [ext_resource type="PackedScene" uid="uid://cdgvlthkdjrpc" path="res://prefabs/electricity_gauge.tscn" id="5_kvlix"]
 [ext_resource type="Script" uid="uid://boojiuw2ovcwl" path="res://scripts/electricity_gauge.gd" id="6_7h5k3"]
@@ -15,6 +16,10 @@ decelCoefficient = 0.01
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="tv" parent="." instance=ExtResource("2_lqrf8")]
+position = Vector2(148, -108)
+scale = Vector2(3, 3)
 
 [node name="cage" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -40,7 +45,7 @@ offset_bottom = 116.0
 [node name="total_energy" type="TextEdit" parent="."]
 offset_left = 91.0
 offset_top = 84.0
-offset_right = 139.0
+offset_right = 150.0
 offset_bottom = 124.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -49,6 +54,7 @@ text = "kW: "
 
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
 [connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]
+[connection signal="game_over" from="electricity_gauge" to="tv" method="_on_game_over"]
 
 [editable path="hammy_and_wheel"]
 [editable path="hammy_and_wheel/wheel"]
