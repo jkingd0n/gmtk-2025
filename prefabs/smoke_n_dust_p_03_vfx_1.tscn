@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dre8w4ohje828"]
 
 [ext_resource type="Texture2D" uid="uid://cf5k5qu51nxd1" path="res://spritesheets/SmokeNDust P03 VFX 1.png" id="1_oefvr"]
-[ext_resource type="Script" uid="uid://oftavph6y1sc" path="res://scripts/smoke_n_dust_p_03_vfx_1.gd" id="2_vae2a"]
+[ext_resource type="Script" path="res://scripts/smoke_n_dust_p_03_vfx_1.gd" id="2_vae2a"]
 
 [sub_resource type="Animation" id="Animation_oalis"]
 length = 0.001

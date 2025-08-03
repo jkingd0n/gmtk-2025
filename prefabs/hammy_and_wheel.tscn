@@ -17,8 +17,6 @@ position = Vector2(0, 22)
 position = Vector2(-69, 21)
 scale = Vector2(1.48438, 1.48438)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [editable path="wheel"]
 [editable path="hammy_run"]
 [editable path="SmokeNDustP03Vfx1"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://x66gr7t6h2hi"]
+[gd_scene load_steps=2 format=3 uid="uid://c7vu24tn28jir"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_spoen"]
 
@@ -13,8 +13,6 @@ offset_top = -109.0
 offset_right = 174.0
 offset_bottom = 8.0
 text = "test"
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="speedTimeout" type="Timer" parent="."]
 one_shot = true

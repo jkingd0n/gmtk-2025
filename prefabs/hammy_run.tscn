@@ -18,6 +18,21 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
+[sub_resource type="Animation" id="Animation_ki1tk"]
+resource_name = "fast"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 1]
+}
+
 [sub_resource type="Animation" id="Animation_6qflj"]
 resource_name = "run"
 loop_mode = 1
@@ -33,21 +48,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 2]
-}
-
-[sub_resource type="Animation" id="Animation_ki1tk"]
-resource_name = "fast"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [3, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ki1tk"]
@@ -68,5 +68,3 @@ script = ExtResource("2_6qflj")
 libraries = {
 &"": SubResource("AnimationLibrary_ki1tk")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]

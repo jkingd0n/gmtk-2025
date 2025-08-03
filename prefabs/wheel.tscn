@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cpv7fif6aluhl" path="res://spritesheets/wheel.png" id="1_1wm4p"]
 [ext_resource type="Texture2D" uid="uid://br2yy6j1m3cfo" path="res://spritesheets/wheelstand.png" id="2_5ahx1"]
-[ext_resource type="Script" uid="uid://stquaxh23kwi" path="res://scripts/wheel.gd" id="2_j3485"]
+[ext_resource type="Script" path="res://scripts/wheel.gd" id="2_j3485"]
 
 [sub_resource type="Animation" id="Animation_8pfyc"]
 length = 0.001
