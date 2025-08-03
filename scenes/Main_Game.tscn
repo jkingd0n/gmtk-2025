@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7asfedg7unoy"]
+[gd_scene load_steps=10 format=3 uid="uid://7asfedg7unoy"]
 
 [ext_resource type="Script" uid="uid://b8d4s0a4v5j4e" path="res://scripts/main_game.gd" id="1_vy804"]
 [ext_resource type="Texture2D" uid="uid://b804i8svwfuvi" path="res://spritesheets/wall.png" id="2_3v32i"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bqdx7r7iw05al" path="res://prefabs/cage.tscn" id="4_3v32i"]
 [ext_resource type="PackedScene" uid="uid://cdgvlthkdjrpc" path="res://prefabs/electricity_gauge.tscn" id="5_kvlix"]
 [ext_resource type="Script" uid="uid://boojiuw2ovcwl" path="res://scripts/electricity_gauge.gd" id="6_7h5k3"]
+[ext_resource type="AudioStream" uid="uid://e0ejokr056ob" path="res://sounds/bgm.ogg" id="9_qmn38"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vy804")
@@ -64,6 +65,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 7
 text = "kW: "
+
+[node name="background_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_qmn38")
+autoplay = true
+parameters/looping = true
 
 [connection signal="electricity_update" from="electricity_gauge" to="." method="_on_electricity_gauge_electricity_update"]
 [connection signal="game_over" from="electricity_gauge" to="." method="_on_game_over"]
