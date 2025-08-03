@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdgvlthkdjrpc"]
 
 [ext_resource type="Script" uid="uid://bo7tu8fhnavpo" path="res://scripts/electricity_gauge_tester.gd" id="1_3bvcg"]
-[ext_resource type="Texture2D" uid="uid://banrx5kjpcbrp" path="res://spritesheets/bar-under.png" id="1_hnjip"]
 [ext_resource type="Texture2D" uid="uid://b2yinku2f7ar1" path="res://spritesheets/bar-over.png" id="2_3bvcg"]
+[ext_resource type="Texture2D" uid="uid://caj6fvkkpro13" path="res://spritesheets/bar-under.png" id="2_gavff"]
 [ext_resource type="Texture2D" uid="uid://bkqkmypj64dxl" path="res://spritesheets/bar-progress.png" id="3_gavff"]
 
 [node name="electricity_gauge" type="Node2D"]
@@ -13,7 +13,7 @@ speed = 45.363
 offset_right = 32.0
 offset_bottom = 64.0
 fill_mode = 3
-texture_under = ExtResource("1_hnjip")
+texture_under = ExtResource("2_gavff")
 texture_over = ExtResource("2_3bvcg")
 texture_progress = ExtResource("3_gavff")
 
