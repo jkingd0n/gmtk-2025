@@ -9,5 +9,5 @@ func update_speed(new_speed) -> void:
 		$SmokeNDustP03Vfx1.visible = true
 	else:
 		$SmokeNDustP03Vfx1.visible = false
-	$wheel/AnimationPlayer.speed_scale = new_speed
+	$wheel/wheel/AnimationPlayer.speed_scale = new_speed
 	$hammy_run/AnimationPlayer.speed_scale = new_speed
